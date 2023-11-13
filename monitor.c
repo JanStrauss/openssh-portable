@@ -1014,6 +1014,8 @@ mm_answer_pam_account(struct ssh *ssh, int sock, struct sshbuf *m)
 
 	mm_request_send(sock, MONITOR_ANS_PAM_ACCOUNT, m);
 
+    sshbuf_reset(loginmsg);
+
 	return (ret);
 }
 

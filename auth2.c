@@ -416,6 +416,7 @@ userauth_finish(struct ssh *ssh, int authenticated, const char *packet_method,
 				sshpkt_fatal(ssh, r,
 				    "%s: send PAM banner", __func__);
 			}
+			sshbuf_reset(loginmsg);
 		}
 		if (!success) {
 			fatal("Access denied for user %s by PAM account "
